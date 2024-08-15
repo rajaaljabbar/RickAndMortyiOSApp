@@ -14,6 +14,9 @@
 		B74BB9B42C6DACFB0079C937 /* RMLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9B32C6DACFB0079C937 /* RMLocationViewController.swift */; };
 		B74BB9B62C6DAD070079C937 /* RMEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9B52C6DAD070079C937 /* RMEpisodeViewController.swift */; };
 		B74BB9B82C6DAD1C0079C937 /* RMSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9B72C6DAD1C0079C937 /* RMSettingsViewController.swift */; };
+		B74BB9BA2C6DCB2F0079C937 /* RMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9B92C6DCB2F0079C937 /* RMService.swift */; };
+		B74BB9BC2C6DCB430079C937 /* RMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9BB2C6DCB430079C937 /* RMRequest.swift */; };
+		B74BB9BE2C6DCBDD0079C937 /* RMEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9BD2C6DCBDD0079C937 /* RMEndpoint.swift */; };
 		B799FF7C2C6CD68D00698EF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799FF7B2C6CD68D00698EF3 /* AppDelegate.swift */; };
 		B799FF7E2C6CD68D00698EF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799FF7D2C6CD68D00698EF3 /* SceneDelegate.swift */; };
 		B799FF802C6CD68D00698EF3 /* RMTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799FF7F2C6CD68D00698EF3 /* RMTabViewController.swift */; };
@@ -49,6 +52,9 @@
 		B74BB9B32C6DACFB0079C937 /* RMLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocationViewController.swift; sourceTree = "<group>"; };
 		B74BB9B52C6DAD070079C937 /* RMEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeViewController.swift; sourceTree = "<group>"; };
 		B74BB9B72C6DAD1C0079C937 /* RMSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsViewController.swift; sourceTree = "<group>"; };
+		B74BB9B92C6DCB2F0079C937 /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
+		B74BB9BB2C6DCB430079C937 /* RMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRequest.swift; sourceTree = "<group>"; };
+		B74BB9BD2C6DCBDD0079C937 /* RMEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEndpoint.swift; sourceTree = "<group>"; };
 		B799FF782C6CD68D00698EF3 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B799FF7B2C6CD68D00698EF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B799FF7D2C6CD68D00698EF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 		B74BB9A82C6DAA9E0079C937 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				B74BB9B92C6DCB2F0079C937 /* RMService.swift */,
+				B74BB9BB2C6DCB430079C937 /* RMRequest.swift */,
+				B74BB9BD2C6DCBDD0079C937 /* RMEndpoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -346,8 +355,11 @@
 				B799FF7C2C6CD68D00698EF3 /* AppDelegate.swift in Sources */,
 				B799FF7E2C6CD68D00698EF3 /* SceneDelegate.swift in Sources */,
 				B74BB9B82C6DAD1C0079C937 /* RMSettingsViewController.swift in Sources */,
+				B74BB9BA2C6DCB2F0079C937 /* RMService.swift in Sources */,
 				B74BB9AB2C6DAB980079C937 /* RMLocation.swift in Sources */,
+				B74BB9BE2C6DCBDD0079C937 /* RMEndpoint.swift in Sources */,
 				B74BB9AD2C6DABA90079C937 /* RMCharacter.swift in Sources */,
+				B74BB9BC2C6DCB430079C937 /* RMRequest.swift in Sources */,
 				B74BB9B22C6DACE00079C937 /* RMCharacterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
