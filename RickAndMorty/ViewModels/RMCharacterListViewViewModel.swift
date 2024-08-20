@@ -9,6 +9,8 @@ import UIKit
 
 protocol RMCharacterListViewViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
+    func didLoadMoreCharacters(with newIndexPaths: [IndexPath])
+    
     func didSelectCharacter(_ character: RMCharacter)
 }
 
@@ -27,7 +29,9 @@ final class RMCharacterListViewViewModel: NSObject {
                     characterStatus: character.status,
                     characterImageUrl: URL(string: character.image)
                 )
-                cellViewModels.append(viewModel)
+                if !cellViewModels.contains(viewModel) {
+                    cellViewModels.append(viewModel)
+                }
             }
         }
     }
@@ -35,7 +39,6 @@ final class RMCharacterListViewViewModel: NSObject {
     private var cellViewModels: [RMCharacterCollectionViewCellViewModel] = []
     
     private var apiInfo: RMGetAllCharactersResponse.Info? = nil
-    
     
     /// Fetch Initial set of chracters (20)
     public func fetchCharacters() {
@@ -64,22 +67,42 @@ final class RMCharacterListViewViewModel: NSObject {
             return
         }
         isLoadingMoreCharacters = true
-        print("Fetching more characters")
         guard let request = RMRequest(url: url) else {
             isLoadingMoreCharacters = false
-            print("Failed to create request")
             return
         }
         
-//        RMService.shared.execute(request,
-//                                 expecting: RMGetAllCharactersResponse.self) { result in
-//            switch result {
-//            case .success(let success):
-//                print(String(describing: success))
-//            case .failure(let failure):
-//                print(String(describing: failure))
-//            }
-//        }
+        RMService.shared.execute(request, expecting: RMGetAllCharactersResponse.self) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            switch result {
+            case .success(let responseModel):
+                let moreResults = responseModel.results
+                let info = responseModel.info
+                strongSelf.apiInfo = info
+                
+                let originalCount = strongSelf.characters.count
+                let newCount = moreResults.count
+                let total = originalCount+newCount
+                let startingIndex = total - newCount - 1
+                let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap({
+                    return IndexPath(row: $0, section: 0)
+                })
+                strongSelf.characters.append(contentsOf: moreResults)
+        
+                DispatchQueue.main.async {
+                    strongSelf.delegate?.didLoadMoreCharacters(
+                        with: indexPathsToAdd
+                    )
+                    
+                    strongSelf.isLoadingMoreCharacters = false
+                }
+            case .failure(let failure):
+                print(String(describing: failure))
+                self?.isLoadingMoreCharacters = false
+            }
+        }
     }
     
     public var shouldShowLoadMoreIndicator: Bool {

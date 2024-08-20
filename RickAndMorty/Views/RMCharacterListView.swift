@@ -80,7 +80,6 @@ final class RMCharacterListView: UIView {
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
     }
-    
 }
 
 extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
@@ -94,6 +93,13 @@ extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
         collectionView.reloadData() // Initial fetch
         UIView.animate(withDuration: 0.4) {
             self.collectionView.alpha = 1
+        }
+    }
+    
+    func didLoadMoreCharacters(with newIndexPaths: [IndexPath]) {
+        
+        collectionView.performBatchUpdates {
+            self.collectionView.insertItems(at: newIndexPaths)
         }
     }
 }
