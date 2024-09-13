@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70401782C93E439003F9611 /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70401772C93E439003F9611 /* RMImageLoader.swift */; };
 		B74BB9AB2C6DAB980079C937 /* RMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9AA2C6DAB980079C937 /* RMLocation.swift */; };
 		B74BB9AD2C6DABA90079C937 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9AC2C6DABA90079C937 /* RMCharacter.swift */; };
 		B74BB9AF2C6DABBB0079C937 /* RMEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74BB9AE2C6DABBB0079C937 /* RMEpisode.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B70401772C93E439003F9611 /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RMImageLoader.swift; path = RickAndMorty/RMImageLoader.swift; sourceTree = SOURCE_ROOT; };
 		B74BB9AA2C6DAB980079C937 /* RMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocation.swift; sourceTree = "<group>"; };
 		B74BB9AC2C6DABA90079C937 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		B74BB9AE2C6DABBB0079C937 /* RMEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisode.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		B74BB9A72C6DAA930079C937 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B70401772C93E439003F9611 /* RMImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				B799FF802C6CD68D00698EF3 /* RMTabViewController.swift in Sources */,
 				B7989D9B2C732177006AB051 /* RMCharacterCollectionViewCell.swift in Sources */,
 				B7FF45F12C6F538A00E247CD /* Extension.swift in Sources */,
+				B70401782C93E439003F9611 /* RMImageLoader.swift in Sources */,
 				B74BB9B62C6DAD070079C937 /* RMEpisodeViewController.swift in Sources */,
 				B799FF7C2C6CD68D00698EF3 /* AppDelegate.swift in Sources */,
 				B799FF7E2C6CD68D00698EF3 /* SceneDelegate.swift in Sources */,
